@@ -1,22 +1,29 @@
-import React, { useEffect } from 'react'
-import PushNotification from 'react-native-push-notification'
+import React, { useEffect } from "react";
+import PushNotification from "react-native-push-notification";
+import NavigationService from "./NavigationService";
 
 const RemotePushController = () => {
   useEffect(() => {
     PushNotification.configure({
       onRegister: function(token) {
-        console.log('TOKEN:', token)
+        console.log("TOKEN:", token);
       },
       onNotification: function(notification) {
-        console.log('REMOTE NOTIFICATION ==>', notification)
+        console.log("REMOTE NOTIFICATION ==>", notification);
+        const clicked = notification.userInteraction;
+
+        if (clicked) {
+          const { data } = notification;
+          NavigationService.navigate("Notification", { notificationData: data });
+        }
       },
-      senderID: '508837852560',
+      senderID: "508837852560",
       popInitialNotification: true,
-      requestPermissions: true
-    })
-  }, [])
+      requestPermissions: true,
+    });
+  }, []);
 
-  return null
-}
+  return null;
+};
 
-export default RemotePushController
+export default RemotePushController;
