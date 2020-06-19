@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { Text, View, Button, StyleSheet } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createSwitchNavigator } from "react-navigation";
 import { createAppContainer } from "react-navigation";
+import PushNotification from "react-native-push-notification";
 import RemotePushController from "./src/services/RemotePushController";
 import NavigationService from './src/services/NavigationService';
 
@@ -23,6 +24,14 @@ const AppContainer = createAppContainer(createSwitchNavigator({Home, Notificatio
 
 
 const App = () => {
+  useEffect(() => {
+    PushNotification.popInitialNotification(notification => {
+      if (notification) {
+        NavigationService.navigate("Notification", { notificationData: {} });
+      }
+    })
+  });
+
   return (
     <NavigationContainer>
       <AppContainer
