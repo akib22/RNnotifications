@@ -25,7 +25,12 @@ npm start
 npm run android
 ```
 
-## To send push notifications
-* change the Sender ID from RemotePushController.js your Firebase project Sender Id.
+## To get push notifications
+* change the Sender ID from RemotePushController.js file to your Firebase project Sender Id.
+![Firebase console](assets/images/senderId.jpg "Device registration token")
 * Compose a cloud message from your Firebase project.
-* Add device registration token from Log.
+![Firebase console](assets/images/compose-msg.png "Device registration token")
+* Copy device registration token from Log.
+![Log](assets/images/log.png "Device registration token")
+* Add device registration token into Firebase project.
+![device](assets/images/test-device.png "Device registration token")

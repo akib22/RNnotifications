@@ -17,6 +17,7 @@ const RemotePushController = () => {
           NavigationService.navigate("Notification", { notificationData: data });
         }
       },
+      // Change senderId to your project senderId
       senderID: "508837852560",
       popInitialNotification: true,
       requestPermissions: true,
