@@ -30,7 +30,7 @@ npm run android
 ![Firebase console](assets/images/senderId.jpg "Device registration token")
 * Compose a cloud message from your Firebase project.
 ![Firebase console](assets/images/compose-msg.png "Device registration token")
-* Copy device registration token from Log.
+* Copy FCM registration token from Log.
 ![Log](assets/images/log.png "Device registration token")
-* Add device registration token into Firebase project.
+* Add FCM registration token into Firebase project.
 ![device](assets/images/test-device.png "Device registration token")
