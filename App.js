@@ -10,17 +10,13 @@ import NavigationService from './src/services/NavigationService';
 
 const Stack = createStackNavigator();
 const Home = ({ navigation }) => (
-  <View>
-    <Text>Home Page</Text>
-    <Button
-      title="Go to Jane's profile"
-      onPress={() => navigation.navigate("Notification", { name: "Jane" })}
-    />
+  <View style={styles.container}>
+    <Text style={styles.bold}>Home Page</Text>
   </View>
 );
 const Notification = () => (
-  <View>
-    <Text>Notification Page</Text>
+  <View style={styles.container}>
+    <Text style={styles.bold}>Notification Page</Text>
   </View>
 );
 const AppContainer = createAppContainer(createSwitchNavigator({Home, Notification}));
@@ -47,6 +43,10 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 20,
+  },
+  bold: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
 
